@@ -67,7 +67,7 @@ const ConferenceEvent = () => {
         avItems.forEach((item) => {
             if(item.quantity > 0 &&
             !items.some((i) => i.name && i.type === "av")){
-                item.push({...item, type:"av"});
+                items.push({...item, type:"av"});
             }
         });
         mealsItems.forEach((item) => {
@@ -76,11 +76,11 @@ const ConferenceEvent = () => {
                 if (item.numberOfPeople){
                     itemForDisplay.numberOfPeople = numberOfPeople;
                 }
-                items.push(itemForDisplay;
+                items.push(itemForDisplay);
             }
-        })
-        
-    }
+        });
+        return items;
+    };
 
     const getItemsFromTotalCost = () => {
         const items = [];
