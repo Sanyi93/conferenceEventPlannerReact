@@ -12,6 +12,8 @@ const ConferenceEvent = () => {
     const venueItems = useSelector((state) => state.venue);
     //retrieving the avItems from the Redux store state using useSelector
     const avItems = useSelector((state) => state.av);
+    //retrieving the meal items from the Redux store using useSelector
+    const mealsItems = useSelector((state) => state.meals);
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
 
