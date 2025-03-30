@@ -56,6 +56,32 @@ const ConferenceEvent = () => {
        
     };
 
+    //creating an array of items the user selects
+    const getItemsFromTotalCost = () => {
+        const items = [];
+        venueItems.forEach((item) => {
+            if(item.quantity > 0){
+                items.push({...item, type:"venue"});
+            }
+        });
+        avItems.forEach((item) => {
+            if(item.quantity > 0 &&
+            !items.some((i) => i.name && i.type === "av")){
+                item.push({...item, type:"av"});
+            }
+        });
+        mealsItems.forEach((item) => {
+            if(item.selected){
+                const itemForDisplay = {...item, type: "meals"};
+                if (item.numberOfPeople){
+                    itemForDisplay.numberOfPeople = numberOfPeople;
+                }
+                items.push(itemForDisplay;
+            }
+        })
+        
+    }
+
     const getItemsFromTotalCost = () => {
         const items = [];
     };
@@ -95,6 +121,13 @@ const ConferenceEvent = () => {
           }
         }
       }
+
+      //object totalCosts containing all 3 totalCosts Subtotals
+      const totalCosts = {
+        venue: venueTotalCost,
+        av: avTotalCost,
+        meals: mealsTotalCost,
+      };
 
     return (
         <>
