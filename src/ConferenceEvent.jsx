@@ -6,6 +6,8 @@ import { incrementQuantity, decrementQuantity } from "./venueSlice";
 const ConferenceEvent = () => {
     const [showItems, setShowItems] = useState(false);
     const [numberOfPeople, setNumberOfPeople] = useState(1);
+
+    //retrieving the venueItems from the Redux Store state using useSelector
     const venueItems = useSelector((state) => state.venue);
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
@@ -18,7 +20,7 @@ const ConferenceEvent = () => {
 
     const handleAddToCart = (index) => {
         if (venueItems[index].name === "Auditorium Hall (Capacity:200)" && venueItems[index].quantity >= 3) {
-          return; 
+          return; //preventing further actions if condition true
         }
         dispatch(incrementQuantity(index));
       };
