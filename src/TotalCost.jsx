@@ -12,7 +12,6 @@ const TotalCost = ({ totalCosts, ItemsDisplay }) => {
                     <h2 id="pre_fee_cost_display" className="price">
                         ${totalAmount}
                     </h2>
-                    //adding the "ItemsDisplay" component created in the ConferenceEvent.jsx in order to display the selected items
                     <div className="render_items">
                         <ItemsDisplay />
                     </div>
@@ -20,5 +19,6 @@ const TotalCost = ({ totalCosts, ItemsDisplay }) => {
             </div>
         </div>
     );
+        //adding the "ItemsDisplay" component created in the ConferenceEvent.jsx in order to display the selected items
 };
 export default TotalCost;

@@ -49,7 +49,6 @@ export const avSlice = createSlice({
         if(item && item.quantity > 0){
             item.quantity--;
         }
-     
     },
   },
 });

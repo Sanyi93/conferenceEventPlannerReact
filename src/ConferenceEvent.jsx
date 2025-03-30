@@ -60,7 +60,7 @@ const ConferenceEvent = () => {
     const getItemsFromTotalCost = () => {
         const items = [];
         venueItems.forEach((item) => {
-            if(item.quantity > 0){
+            if(item.quantity > 0) {
                 items.push({...item, type:"venue"});
             }
         });
@@ -107,7 +107,7 @@ const ConferenceEvent = () => {
                             <td>${item.cost}</td>
                             <td>
                                 {item.type ==="meals" || item.numberOfPeople
-                                ? `For {numberOfPeople}`
+                                ? `For ${numberOfPeople}`
                                 : item.quantity}
                             </td>
                             <td>
